@@ -8,6 +8,10 @@ sio.attach(app)
 room_id = "123"
 
 
+async def index(request):
+    return web.Response(text="Hello World", content_type="text/html")
+
+
 @sio.event
 async def connect(sid, environ):
     await sio.enter_room(sid, room_id)
@@ -23,6 +27,9 @@ async def message(sid, data):
 async def disconnect(sid):
     await sio.leave_room(sid, room_id)
     print("disconnect ", sid)
+
+
+app.router.add_get("/", index)
 
 
 if __name__ == "__main__":
