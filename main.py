@@ -1,3 +1,3 @@
-from api.index import app, socketio_app
+from api.index import socketio_app as app
 
-__all__ = ["app", "socketio_app"]
+__all__ = ["app"]
