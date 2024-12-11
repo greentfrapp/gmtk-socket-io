@@ -10,10 +10,6 @@
     {
       "src": "/(.*)",
       "dest": "api/index.py"
-    },
-    {
-      "src": "/socket.io/(.*)",
-      "dest": "api/index.py"
     }
   ]
 }
